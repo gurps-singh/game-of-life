@@ -2,10 +2,8 @@ import random
 
 import numpy as np
 
-
 def initialiseGrid(rows, columns):
     return [[0 for x in range(columns)] for y in range(rows)]
-
 
 def randomiseGrid(rows, columns):
     initialGrid = initialiseGrid(rows, columns)
@@ -74,11 +72,11 @@ def nextGenerationValue(currentRow, currentColumn, numberOfRowsInGrid, numberOfC
 def runGameOfLife(numberOfRows, numberOfColumns, option):
     if numberOfColumns > 100 or numberOfRows > 100:
         print('The number of rows or columns specified is above the limit permitted, please use a lower value')
-        exit(1)
+        return
     counter = 0
     if option == 1:
         grid = randomiseGrid(numberOfRows, numberOfColumns)
-        print('Generation ', counter)
+        print('Generation', counter)
         print(np.matrix(grid))
         numberOfGenerationIterations = int(input('Number of generations or 0 to exit?: '))
         runForXGenerations(numberOfGenerationIterations, grid, counter)
@@ -96,7 +94,7 @@ def runGameOfLife(numberOfRows, numberOfColumns, option):
                     exit(1)
                 a.append(value)
             grid.append(a)
-        print('Generation ', counter)
+        print('Generation', counter)
         print(np.matrix(grid))
         numberOfGenerationIterations = int(input('Number of generations or 0 to exit?: '))
         runForXGenerations(numberOfGenerationIterations, grid, counter)
@@ -115,6 +113,6 @@ def runForXGenerations(numberOfGenerationIterations, grid, counter):
         while counter != numberOfGenerationIterations:
             counter += 1
             nextGenGrid = nextGenerationGrid(grid)
-            print('Generation ', counter)
+            print('Generation', counter)
             print(np.matrix(nextGenGrid))
             grid = nextGenGrid
