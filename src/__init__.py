@@ -1,0 +1,1 @@
+from .gameOfLife import runGameOfLife

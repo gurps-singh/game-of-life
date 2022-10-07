@@ -1,8 +1,6 @@
 import io
 import unittest.mock
-
-import gameOfLife
-
+from src import gameOfLife
 
 class TestInitialiseGrid(unittest.TestCase):
     def test_valid_equal_rows_columns(self):
@@ -127,6 +125,7 @@ class TestRunGameOfLife(unittest.TestCase):
         self.assertEqual(
             'The number of rows or columns specified is above the limit permitted, please use a lower value\n',
             mock_stdout.getvalue())
+
 
 if __name__ == '__main__':
     unittest.main()
