@@ -1,6 +1,12 @@
 # Coding Challenge - Game of Life
 
+## Pre-reqs
 
+Python 3.x
+
+Numpy - a Python library offering comprehensive mathematical functions
+
+Docker
 
 ## Documentation
 
@@ -18,7 +24,17 @@ will be displayed. The user can select the number of generations/iterations of t
 game they wish to proceed through. These are displayed after each iteration to show the user
 how the game they call life is developing.
 
-## Run the program
+## Runbook
+
+###Using Docker
+
+If you have Docker running on your machine:
+```
+docker build --tag game-of-life .
+docker run -ti game-of-life 
+```
+
+###Using Pycharm/Terminal
 
 To run the program, you run the following:
 ```
@@ -29,7 +45,7 @@ or run the following from root
 python3 moj-gurps-singh-challenge
 ```
 
-## Running the tests
+## Tests
 
 To run the tests, you can use either of the following from root:
 ```
