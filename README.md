@@ -1,5 +1,7 @@
 # Coding Challenge - Game of Life
 
+
+
 ## Documentation
 
 https://docs.google.com/document/d/1aFgHHfGyvDLc7AFuN_Ao7O4pcCetpZzGxY7DFhuflrU/edit?usp=sharing
