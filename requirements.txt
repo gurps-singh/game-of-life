@@ -1,5 +1,1 @@
 numpy==1.23.3
-
-The requirements.
-txt is a file listing all the dependencies for a specific Python project.
-It may also contain dependencies of dependencies, as discussed previously. The listed entries can be pinned or non-pinned.
