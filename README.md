@@ -26,7 +26,7 @@ how the game they call life is developing.
 
 ## Runbook
 
-###Using Docker
+### Using Docker
 
 If you have Docker running on your machine:
 ```
@@ -34,7 +34,7 @@ docker build --tag game-of-life .
 docker run -ti game-of-life 
 ```
 
-###Using Pycharm/Terminal
+### Using Pycharm/Terminal
 
 To run the program, you run the following:
 ```
@@ -51,6 +51,16 @@ To run the tests, you can use either of the following from root:
 ```
 python3 -m unittest discover (this will discover and run all Python unit tests)
 python3 -m unittest test/test_gameOfLife.py
+```
+For coverage:
+```
+coverage run --source=./src -m unittest discover -s test && coverage report -m
+```
+
+## Linting
+```
+pylint src 
+pylint test 
 ```
 
 ## References
