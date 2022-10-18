@@ -111,14 +111,6 @@ class TestNextGenerationValue(unittest.TestCase):
 
 class TestRunGameOfLife(unittest.TestCase):
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
-    def test_incorrect_option(self, mock_stdout):
-        rows = 3
-        columns = 3
-        option = 3
-        gameOfLife.runGameOfLife(rows, columns, option)
-        self.assertEqual('Incorrect option selected. Try again\n', mock_stdout.getvalue())
-
-    @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_higher_than_limit(self, mock_stdout):
         rows = 101
         columns = 101

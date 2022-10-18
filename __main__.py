@@ -1,21 +1,33 @@
 import src
-#src is a module which can be imported as a module from any other python program
-#in order to run anything in src from the command line, we can add a file like
-#this then we can run the program from the terminal command like
-# python3 python
 
-#python looks for a file named main.py to start execution automatically
-# if it doesnt find it it will throw an error else it will
-#execute it and
 
-#removes ambiguity among end user about entry point of program
-#clean execution of code
+def menu() -> int:
+    selectedOption = -1
+    while selectedOption not in (0, 1, 2):
+        print("____MENU_____")
+        print("1: To generate a random Game of Life\n\
+        2: Enter your own values for a Game of Life\n\
+        0. Exit")
+        try:
+            selectedOption = int(input('Select Option: '))
+            if selectedOption not in (0, 1, 2):
+                print("An incorrect menu option was selected")
+        except TypeError:
+            print("A non integer value was entered")
+        except ValueError:
+            print("A non integer value was entered")
+    return selectedOption
 
-numberOfRows = int(input('Number of rows for the grid?: '))
-numberOfColumns = int(input('Number of columns for the grid?: '))
-print("____MENU_____")
-print("1: To generate a random Game of Life for the grid specified above \n\
-2: Enter your own values for the grid specified above")
-option = int(input('Select Option: '))
 
-src.runGameOfLife(numberOfRows, numberOfColumns, option)
+running = True
+while running:
+    menuOption = menu()
+    if menuOption != 0:
+        numberOfRows = int(input('Number of rows for the grid?: '))
+        numberOfColumns = int(input('Number of columns for the grid?: '))
+        src.runGameOfLife(numberOfRows, numberOfColumns, menuOption)
+        print("Game of Life Complete")
+        print("_____________________\n")
+    else:
+        print("Program will now exit")
+        running = False

@@ -14,15 +14,15 @@ https://docs.google.com/document/d/1aFgHHfGyvDLc7AFuN_Ao7O4pcCetpZzGxY7DFhuflrU/
 
 ## Instructions
 
-Once the program is started, the user has to define the grid of cells. This has an upper limit of 100 to address performance issues which 
+Once the program has started, the user has to define the grid of cells. This has an upper limit of 100 to address performance issues which 
 may arise due to a large dataset. Once the grid has been defined, the user has two options:
 - Either generate a random grid of values or
-- Fill in each cell within the grid manually
+- Fill in each cell within the grid manually (dependent on the grid size, each cell location is shown)
 
 Following the creation of the grid and the addition of data, the initial generation
 will be displayed. The user can select the number of generations/iterations of the 
 game they wish to proceed through. These are displayed after each iteration to show the user
-how the game they call life is developing.
+to development of life within the game. 
 
 ## Runbook
 

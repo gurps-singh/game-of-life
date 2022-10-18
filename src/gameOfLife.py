@@ -1,8 +1,10 @@
 import random
 import numpy as np
 
+
 def initialiseGrid(rows, columns):
     return [[0 for x in range(columns)] for y in range(rows)]
+
 
 def randomiseGrid(rows, columns):
     initialGrid = initialiseGrid(rows, columns)
@@ -81,33 +83,31 @@ def runGameOfLife(numberOfRows, numberOfColumns, option):
         runForXGenerations(numberOfGenerationIterations, grid, counter)
     elif option == 2:
         grid = []
-        value = 0
         print("Enter 0 or 1 one entry at a time, pressing enter after each entry:")
         for i in range(numberOfRows):
             a = []
             for j in range(numberOfColumns):
-                try:
-                    value = int(input("Enter value for grid entry {} {}: ".format(i, j)))
-                except TypeError:
-                    print("A non integer value was entered")
-                    exit(1)
+                value = -1
+                while value not in (0, 1):
+                    try:
+                        value = int(input("Enter 0 or 1 value for grid entry {} {}: ".format(i, j)))
+                        if value not in (0, 1):
+                            print("A value other than 0 or 1 was entered")
+                    except TypeError:
+                        print("A non integer value was entered")
+                    except ValueError:
+                        print("A non integer value was entered")
                 a.append(value)
             grid.append(a)
         print('Generation', counter)
         print(np.matrix(grid))
         numberOfGenerationIterations = int(input('Number of generations or 0 to exit?: '))
         runForXGenerations(numberOfGenerationIterations, grid, counter)
-    elif option == 0:
-        print('Program will exit')
-        exit(1)
-    else:
-        print('Incorrect option selected. Try again')
 
 
 def runForXGenerations(numberOfGenerationIterations, grid, counter):
     if numberOfGenerationIterations == 0:
-        print('Program will exit')
-        exit(1)
+        return
     else:
         while counter != numberOfGenerationIterations:
             counter += 1
