@@ -42,7 +42,7 @@ python3 __main__.py
 ```
 or run the following from root
 ```
-python3 moj-gurps-singh-challenge
+python3 game-of-life
 ```
 
 ## Tests
