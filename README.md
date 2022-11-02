@@ -1,5 +1,5 @@
 # Coding Challenge - Game of Life
-![GitHub branch checks state](https://img.shields.io/github/checks-status/gurps-singh/game-of-life/main)
+![GitHub top language](https://img.shields.io/github/languages/top/gurps-singh/game-of-life)
 
 ## Pre-reqs
 
